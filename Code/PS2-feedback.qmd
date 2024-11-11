@@ -1,0 +1,46 @@
+---
+title: "PS2-feedback"
+format: html
+editor: visual
+---
+
+## PS2 Feedback
+
+Your project was not named properly and did not have a code folder (I created one to save this file to.)
+
+You did not examine the data with any of the functions we learned (e.g. `glimpse()`, `head()`, `str()` etc.)
+
+On line 38 when you use `factor()` to reassign levels, you should run `levels()` again to make sure it worked.
+
+I'm glad you did error checking, but you did not do any error checking for numeric variables.
+
+When you get to your line 57, this is not the data examination we have discussed in class for becoming familiar with your data (see above).
+
+Work on how you space your code within a code chunk. For example, for your lines 71 - 74, you have
+
+```{r}
+ggplot(halloween, aes(x= age, y= min_temp_trick_treat_C, colour = Costume_type, shape = Costume_type)) + geom_point( size = 5) + xlab("Age of trick-or-treater (years)") + ylab("Minimum temperature while out (C)") + theme_bw() 
+
+```
+
+which is not very easy to read. Here is the same code - I've just adjusted the spacing:
+
+```{r}
+ggplot(halloween, aes(x= age, y= min_temp_trick_treat_C, colour = Costume_type, shape = Costume_type)) + 
+  geom_point( size = 5) + 
+  xlab("Age of trick-or-treater (years)") + 
+  ylab("Minimum temperature while out (C)") + 
+  theme_bw() 
+
+```
+Much easier to read.
+
+Lines 78 - 79 - you shouldn't have used `group_by()` and `summarise()` - doing so gave you the incorrect result. You also neglected to get the axis labels adjusted.
+
+Lines 85 to 100 you were supposed to create a single table that opened in a new view. I'm glad you used na.rm = T. See key for code.
+
+In the final figure I think your points are larger than I had, but overall okay. 
+
+I'd like to see you do more providing commentary on the output of code chunks. What does the output tell you that you need to know the next time you read through the file? Think of the .qmd as your record for "Future Emma" of what you did - you don't want to have to rely on the assignment handout to figure out why you took the steps you did.
+
+I think it would really help you to go through the key line by line and see how that code works.
